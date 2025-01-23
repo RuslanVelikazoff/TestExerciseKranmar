@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -15,5 +16,10 @@ public class Bullet : MonoBehaviour
     public void SetBulletDamage(int damage)
     {
         this.damage = damage;
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        Destroy(this.gameObject);
     }
 }
