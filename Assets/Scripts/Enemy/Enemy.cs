@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -85,7 +84,8 @@ public class Enemy : MonoBehaviour
         if (currentHealth <= 0)
         {
             currentHealth = 0;
-            //kill
+            Destroy(this.transform.parent.gameObject);
+            GameManager.Instance.KillEnemy();
         }
 
         healthBar.UpdateHealthText(currentHealth);
