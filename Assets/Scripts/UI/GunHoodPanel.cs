@@ -21,9 +21,6 @@ public class GunHoodPanel : MonoBehaviour
     [SerializeField] 
     private Sprite fistSprite;
 
-    [SerializeField] 
-    private InventoryBarUI inventoryBar;
-
     private void Awake()
     {
         Instance = this;
@@ -32,7 +29,7 @@ public class GunHoodPanel : MonoBehaviour
     public void UpdateAmmoText(int ammoMagazine, int ammoLeft)
     {
         ammoText.text = ammoMagazine + "/" + ammoLeft;
-        inventoryBar.UpdateInventoryBarText();
+        InventoryBarUI.Instance.UpdateInventoryBarText();
     }
 
     public void SelectPistol()

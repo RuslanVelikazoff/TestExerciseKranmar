@@ -90,5 +90,11 @@ public class InventoryData : MonoBehaviour
         _ammoPistol = amount;
         Save();
     }
-    
+
+    public void SetRifleAmmo(int amount)
+    {
+        _ammoRifle = amount;
+        Save();
+    }
+
 }

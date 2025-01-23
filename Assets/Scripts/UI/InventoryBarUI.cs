@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class InventoryBarUI : MonoBehaviour
 {
+    public static InventoryBarUI Instance { get; private set; }
+
     [SerializeField]
     private TextMeshProUGUI pistolAmmoText;
     [SerializeField] 
@@ -11,6 +13,11 @@ public class InventoryBarUI : MonoBehaviour
     private TextMeshProUGUI kitAmountText;
     [SerializeField]
     private TextMeshProUGUI kitAmmoAmountText;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {
