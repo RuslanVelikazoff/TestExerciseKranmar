@@ -9,6 +9,7 @@ public class InventoryData : MonoBehaviour
     private int _ammoPistol;
     private int _ammoRifle;
     private int _kitAmount;
+    private int _ammoKitAmount;
 
     private void Awake()
     {
@@ -42,6 +43,7 @@ public class InventoryData : MonoBehaviour
         _ammoPistol = data.ammoPistol;
         _ammoRifle = data.ammoRifle;
         _kitAmount = data.kitAmount;
+        _ammoKitAmount = data.ammoKitAmount;
     }
 
     private void Save()
@@ -56,7 +58,8 @@ public class InventoryData : MonoBehaviour
         {
             ammoPistol = _ammoPistol,
             ammoRifle = _ammoRifle,
-            kitAmount = _kitAmount
+            kitAmount = _kitAmount,
+            ammoKitAmount = _ammoKitAmount
         };
 
         return data;
@@ -67,9 +70,25 @@ public class InventoryData : MonoBehaviour
         return _ammoPistol;
     }
 
+    public int GetRifleAmmo()
+    {
+        return _ammoRifle;
+    }
+
+    public int GetKitAmount()
+    {
+        return _kitAmount;
+    }
+
+    public int GetAmmoKitAmount()
+    {
+        return _ammoKitAmount;
+    }
+
     public void SetPistolAmmo(int amount)
     {
         _ammoPistol = amount;
         Save();
     }
+    
 }

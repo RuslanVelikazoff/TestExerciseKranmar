@@ -4,6 +4,7 @@ public class GameData
     public int ammoRifle;
 
     public int kitAmount;
+    public int ammoKitAmount;
     
     public GameData()
     {
@@ -11,5 +12,6 @@ public class GameData
         ammoRifle = 250;
 
         kitAmount = 0;
+        ammoKitAmount = 0;
     }
 }

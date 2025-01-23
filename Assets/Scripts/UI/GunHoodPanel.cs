@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,6 +18,11 @@ public class GunHoodPanel : MonoBehaviour
     private Sprite pistolSprite;
     [SerializeField] 
     private Sprite riffleSprite;
+    [SerializeField] 
+    private Sprite fistSprite;
+
+    [SerializeField] 
+    private InventoryBarUI inventoryBar;
 
     private void Awake()
     {
@@ -26,6 +32,7 @@ public class GunHoodPanel : MonoBehaviour
     public void UpdateAmmoText(int ammoMagazine, int ammoLeft)
     {
         ammoText.text = ammoMagazine + "/" + ammoLeft;
+        inventoryBar.UpdateInventoryBarText();
     }
 
     public void SelectPistol()
@@ -36,5 +43,11 @@ public class GunHoodPanel : MonoBehaviour
     public void SelectRiffle()
     {
         ammoImage.sprite = riffleSprite;
+    }
+
+    public void SelectFist()
+    {
+        ammoImage.sprite = fistSprite;
+        ammoText.text = String.Empty;
     }
 }

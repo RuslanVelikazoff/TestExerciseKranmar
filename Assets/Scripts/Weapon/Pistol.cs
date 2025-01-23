@@ -46,11 +46,6 @@ public class Pistol : MonoBehaviour
         weaponHood.UpdateReloadText(currentReloadTime);
     }
 
-    private void OnDisable()
-    {
-        InventoryData.Instance.SetPistolAmmo(ammoInventory);
-    }
-
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -59,6 +54,15 @@ public class Pistol : MonoBehaviour
             {
                 Shoot();
             }
+        }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            mainCamera.fieldOfView = 30;
+        }
+        if(Input.GetMouseButtonUp(1))
+        {
+            mainCamera.fieldOfView = 60;
         }
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -110,6 +114,7 @@ public class Pistol : MonoBehaviour
             Debug.Log("Нет патронов в инвентаре");
         }
         
+        InventoryData.Instance.SetPistolAmmo(ammoInventory);
         GunHoodPanel.Instance.UpdateAmmoText(ammoMagazine, ammoInventory);
         reload = false;
     }
