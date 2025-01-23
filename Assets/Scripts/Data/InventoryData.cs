@@ -97,4 +97,25 @@ public class InventoryData : MonoBehaviour
         Save();
     }
 
+    public void PlusHealKit()
+    {
+        _kitAmount++;
+        Save();
+    }
+
+    public void MinusHealKit()
+    {
+        _kitAmount--;
+        Save();
+    }
+
+    public void PlusAmmoKit()
+    {
+        _ammoKitAmount++;
+    }
+
+    public void MinusAmmoKit()
+    {
+        _ammoKitAmount--;
+    }
 }

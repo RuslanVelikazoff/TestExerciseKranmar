@@ -24,6 +24,8 @@ public class Rifle : MonoBehaviour
     [SerializeField] 
     private float shootDelay;
     private float currentShootDelay;
+    [SerializeField] 
+    private int damage;
 
     [Space(13)]
     
@@ -160,6 +162,7 @@ public class Rifle : MonoBehaviour
 
         currentBullet.transform.forward = dirWithSpread.normalized;
 
+        currentBullet.GetComponent<Bullet>().SetBulletDamage(damage);
         currentBullet.GetComponent<Rigidbody>().AddForce(dirWithSpread.normalized * shootForce, ForceMode.Impulse);
     }
 }

@@ -21,6 +21,8 @@ public class Pistol : MonoBehaviour
     private float shootForce;
     [SerializeField]
     private float spread;
+    [SerializeField]
+    private int damage;
 
     [Space(13)]
     
@@ -149,6 +151,7 @@ public class Pistol : MonoBehaviour
 
         currentBullet.transform.forward = dirWithSpread.normalized;
 
+        currentBullet.GetComponent<Bullet>().SetBulletDamage(damage);
         currentBullet.GetComponent<Rigidbody>().AddForce(dirWithSpread.normalized * shootForce, ForceMode.Impulse);
     }
 }

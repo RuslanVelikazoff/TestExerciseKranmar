@@ -419,6 +419,7 @@ MonoBehaviour:
   weaponHood: {fileID: 162057764}
   shootForce: 70
   spread: 0
+  damage: 3
   ammoMagazine: 7
   reloadTime: 3
 --- !u!1 &269414579
@@ -2539,6 +2540,7 @@ MonoBehaviour:
   shootForce: 100
   spread: 0.5
   shootDelay: 0.13
+  damage: 5
   ammoMagazine: 30
   reloadTime: 8
 --- !u!4 &1479419721
@@ -2952,7 +2954,7 @@ GameObject:
   - component: {fileID: 1643827170}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

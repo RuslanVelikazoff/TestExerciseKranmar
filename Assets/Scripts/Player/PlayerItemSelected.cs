@@ -26,12 +26,26 @@ public class PlayerItemSelected : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            
+            if (InventoryData.Instance.GetKitAmount() > 0)
+            {
+                PlayerHealth.Instance.HealthPlayer(20);
+                InventoryData.Instance.MinusHealKit();
+                InventoryBarUI.Instance.UpdateInventoryBarText();
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            //AmmoHeal
+            if (InventoryData.Instance.GetAmmoKitAmount() > 0)
+            {
+                InventoryData.Instance.SetPistolAmmo(
+                    InventoryData.Instance.GetPistolAmmo() + 60);
+                
+                InventoryData.Instance.SetRifleAmmo(
+                    InventoryData.Instance.GetRifleAmmo() + 120);
+                
+                InventoryBarUI.Instance.UpdateInventoryBarText();
+            }
         }
     }
 
