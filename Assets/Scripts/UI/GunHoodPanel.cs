@@ -25,7 +25,7 @@ public class GunHoodPanel : MonoBehaviour
 
     public void UpdateAmmoText(int ammoMagazine, int ammoLeft)
     {
-        ammoText.text = ammoLeft + "/" + ammoLeft;
+        ammoText.text = ammoMagazine + "/" + ammoLeft;
     }
 
     public void SelectPistol()

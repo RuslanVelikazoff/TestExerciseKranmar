@@ -61,4 +61,15 @@ public class InventoryData : MonoBehaviour
 
         return data;
     }
+
+    public int GetPistolAmmo()
+    {
+        return _ammoPistol;
+    }
+
+    public void SetPistolAmmo(int amount)
+    {
+        _ammoPistol = amount;
+        Save();
+    }
 }
