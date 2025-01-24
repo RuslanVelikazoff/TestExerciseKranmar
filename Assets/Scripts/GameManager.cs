@@ -20,11 +20,13 @@ public class GameManager : MonoBehaviour
 
     private void WinGame()
     {
+        Cursor.lockState = CursorLockMode.Confined;
         winPanel.SetActive(true);
     }
 
     public void LoseGame()
     {
+        Cursor.lockState = CursorLockMode.Confined;
         losePanel.SetActive(true);
     }
 

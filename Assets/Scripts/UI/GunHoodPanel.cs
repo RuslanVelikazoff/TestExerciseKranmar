@@ -20,6 +20,8 @@ public class GunHoodPanel : MonoBehaviour
     private Sprite riffleSprite;
     [SerializeField] 
     private Sprite fistSprite;
+    [SerializeField] 
+    private Sprite grenadeSprite;
 
     private void Awake()
     {
@@ -45,6 +47,12 @@ public class GunHoodPanel : MonoBehaviour
     public void SelectFist()
     {
         ammoImage.sprite = fistSprite;
+        ammoText.text = String.Empty;
+    }
+
+    public void SelectGrenade()
+    {
+        ammoImage.sprite = grenadeSprite;
         ammoText.text = String.Empty;
     }
 }

@@ -6,6 +6,8 @@ public class PlayerItemSelected : MonoBehaviour
     private GameObject pistol;
     [SerializeField] 
     private GameObject rifle;
+    [SerializeField] 
+    private GameObject grenade;
     
     private void Update()
     {
@@ -44,8 +46,15 @@ public class PlayerItemSelected : MonoBehaviour
                 InventoryData.Instance.SetRifleAmmo(
                     InventoryData.Instance.GetRifleAmmo() + 120);
                 
+                InventoryData.Instance.MinusAmmoKit();
+                
                 InventoryBarUI.Instance.UpdateInventoryBarText();
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            SelectGrenade();
         }
     }
 
@@ -53,18 +62,29 @@ public class PlayerItemSelected : MonoBehaviour
     {
         pistol.SetActive(true);
         rifle.SetActive(false);
+        grenade.SetActive(false);
     }
 
     private void SelectRifle()
     {
         pistol.SetActive(false);
         rifle.SetActive(true);
+        grenade.SetActive(false);
     }
 
     private void SelectFist()
     {
         pistol.SetActive(false);
         rifle.SetActive(false);
+        grenade.SetActive(false);
         GunHoodPanel.Instance.SelectFist();
+    }
+
+    private void SelectGrenade()
+    {
+        grenade.SetActive(true);
+        pistol.SetActive(false);
+        rifle.SetActive(false);
+        GunHoodPanel.Instance.SelectGrenade();
     }
 }
