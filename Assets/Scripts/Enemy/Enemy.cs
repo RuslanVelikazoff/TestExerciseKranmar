@@ -93,13 +93,12 @@ public class Enemy : MonoBehaviour
 
     private void Attack()
     {
-        GameObject currentBullet = Instantiate(bullet, spawnBulletPosition.position, Quaternion.identity);
-        Vector3 direction = player.transform.position;
-        
-        currentBullet.GetComponent<Bullet>().SetBulletDamage(damage);
-        currentBullet.GetComponent<Rigidbody>().AddForce(direction.normalized * shootForce, ForceMode.Impulse);
-        currentBullet.transform.position = Vector3.MoveTowards(spawnBulletPosition.position,
-            player.transform.position, shootForce);
+        if (bullet != null && player != null)
+        {
+            GameObject bulletPrefab = Instantiate(bullet, spawnBulletPosition.position, Quaternion.identity);
+            bulletPrefab.GetComponent<BulletEnemy>().SetBulletSpecifications(damage, shootForce);
+            bulletPrefab.GetComponent<BulletEnemy>().SetPlayerPosition(player.transform);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
